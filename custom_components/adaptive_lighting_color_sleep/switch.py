@@ -631,7 +631,7 @@ class AdaptiveSwitch(SwitchEntity, RestoreEntity):
     @property
     def name(self):
         """Return the name of the device if any."""
-        return f"Adaptive Lighting: {self._name}"
+        return f"Adaptive Lighting Color Sleep: {self._name}"
 
     @property
     def unique_id(self):
@@ -1002,7 +1002,7 @@ class SimpleSwitch(SwitchEntity, RestoreEntity):
         self._which = which
         name = data[CONF_NAME]
         self._unique_id = f"{name}_{slugify(self._which)}"
-        self._name = f"Adaptive Lighting {which}: {name}"
+        self._name = f"Adaptive Lighting Color Sleep {which}: {name}"
         self._initial_state = initial_state
 
     @property
