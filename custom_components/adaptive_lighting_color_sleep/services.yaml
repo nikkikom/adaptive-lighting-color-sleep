@@ -3,7 +3,7 @@ apply:
   fields:
     entity_id:
       description: entity_id of the Adaptive Lighting switch.
-      example: switch.adaptive_lighting_default
+      example: switch.adaptive_lighting_color_sleep_default
     lights:
       description: "entity_id(s) of lights, default: lights of the switch"
       example: light.bedroom_ceiling
@@ -27,7 +27,7 @@ set_manual_control:
   fields:
     entity_id:
       description: entity_id of the Adaptive Lighting switch.
-      example: switch.adaptive_lighting_default
+      example: switch.adaptive_lighting_color_sleep_default
     manual_control:
       description: "Whether to add ('true') or remove ('false') the light from the 'manual_control' list, default: true"
       example: true

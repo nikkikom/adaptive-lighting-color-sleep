@@ -1,0 +1,12 @@
+{
+  "domain": "adaptive_lighting_color_sleep",
+  "name": "Adaptive Lighting Color Sleep",
+  "documentation": "https://github.com/nikkikom/adaptive-lighting-color-sleep#readme",
+  "issue_tracker": "https://github.com/nikkikom/adaptive-lighting-color-sleep/issues",
+  "config_flow": true,
+  "dependencies": [],
+  "codeowners": ["@nikkikom"],
+  "version": "1.0.15",
+  "requirements": [],
+  "iot_class": "calculated"
+}

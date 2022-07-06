@@ -1,5 +1,5 @@
 {
-    "name": "Adaptive Lighting",
+    "name": "Adaptive Lighting Color Sleep",
     "render_readme": true,
     "domains": ["switch"]
 }

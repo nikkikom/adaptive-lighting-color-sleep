@@ -228,7 +228,7 @@ async def handle_apply(switch: AdaptiveSwitch, service_call: ServiceCall):
     all_lights = _expand_light_groups(hass, all_lights)
     switch.turn_on_off_listener.lights.update(all_lights)
     _LOGGER.debug(
-        "Called 'adaptive_lighting.apply' service with '%s'",
+        "Called 'adaptive_lighting_color_sleep.apply' service with '%s'",
         data,
     )
     for light in all_lights:
@@ -252,7 +252,7 @@ async def handle_set_manual_control(switch: AdaptiveSwitch, service_call: Servic
     else:
         all_lights = _expand_light_groups(switch.hass, lights)
     _LOGGER.debug(
-        "Called 'adaptive_lighting.set_manual_control' service with '%s'",
+        "Called 'adaptive_lighting_color_sleep.set_manual_control' service with '%s'",
         service_call.data,
     )
     if service_call.data[CONF_MANUAL_CONTROL]:
@@ -279,7 +279,7 @@ def _fire_manual_control_event(
     hass = switch.hass
     fire = hass.bus.async_fire if is_async else hass.bus.fire
     _LOGGER.debug(
-        "'adaptive_lighting.manual_control' event fired for %s for light %s",
+        "'adaptive_lighting_color_sleep.manual_control' event fired for %s for light %s",
         switch.entity_id,
         light,
     )
@@ -1368,12 +1368,12 @@ class TurnOnOffListener:
                 adapt_brightness and BRIGHTNESS_ATTRS.intersection(keys)
             ):
                 # Light was already on and 'light.turn_on' was not called by
-                # the adaptive_lighting integration.
+                # the adaptive_lighting_color_sleep integration.
                 manual_control = self.manual_control[light] = True
                 _fire_manual_control_event(switch, light, turn_on_event.context)
                 _LOGGER.debug(
                     "'%s' was already on and 'light.turn_on' was not called by the"
-                    " adaptive_lighting integration (context.id='%s'), the Adaptive"
+                    " adaptive_lighting_color_sleep integration (context.id='%s'), the Adaptive"
                     " Lighting will stop adapting the light until the switch or the"
                     " light turns off and then on again.",
                     light,

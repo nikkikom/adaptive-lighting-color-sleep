@@ -6,7 +6,7 @@ import homeassistant.helpers.config_validation as cv
 
 ICON = "mdi:theme-light-dark"
 
-DOMAIN = "adaptive_lighting"
+DOMAIN = "adaptive_lighting_color_sleep"
 SUN_EVENT_NOON = "solar_noon"
 SUN_EVENT_MIDNIGHT = "solar_midnight"
 
